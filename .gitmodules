@@ -55,9 +55,6 @@
 [submodule "demangle/demangle"]
 	path = demangle/demangle
 	url = https://github.com/Flowmill/demangle.git
-[submodule "tools/valgrind"]
-	path = tools/valgrind
-	url = https://repo.or.cz/valgrind.git
 [submodule "gcp_cpp/google-cloud-cpp-common"]
 	path = gcp_cpp/google-cloud-cpp-common
 	url = https://github.com/googleapis/google-cloud-cpp-common.git

@@ -8,7 +8,6 @@ ARG bcc_IMAGE_TAG
 ARG libuv_IMAGE_TAG
 ARG aws_sdk_IMAGE_TAG
 ARG cpp_misc_IMAGE_TAG
-ARG tools_IMAGE_TAG
 ARG go_IMAGE_TAG
 ARG grpc_cpp_IMAGE_TAG
 ARG librdkafka_IMAGE_TAG
@@ -26,7 +25,6 @@ FROM $bcc_IMAGE_TAG as build-bcc
 FROM $libuv_IMAGE_TAG as build-libuv
 FROM $aws_sdk_IMAGE_TAG as build-aws-sdk
 FROM $cpp_misc_IMAGE_TAG as build-cpp-misc
-FROM $tools_IMAGE_TAG as build-tools
 FROM $go_IMAGE_TAG as build-go
 FROM $grpc_cpp_IMAGE_TAG as build-grpc-cpp
 FROM $librdkafka_IMAGE_TAG as build-librdkafka
@@ -106,7 +104,6 @@ COPY --from=build-bcc $HOME/install $HOME/install
 COPY --from=build-libuv $HOME/install $HOME/install
 COPY --from=build-aws-sdk $HOME/install $HOME/install
 COPY --from=build-cpp-misc $HOME/install $HOME/install
-COPY --from=build-tools $HOME/install $HOME/install
 COPY --from=build-openssl $HOME/install $HOME/install
 COPY --from=build-librdkafka $HOME/install $HOME/install
 COPY --from=build-abseil-cpp $HOME/install $HOME/install

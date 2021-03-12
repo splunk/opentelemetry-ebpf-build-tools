@@ -15,17 +15,6 @@ images from the code in the main repository.
 * Check out this repository
 * Run the build script: `./build.sh`
 
-## Using the build container:
-
-Add the following alias to your ~/.bash_profile:
-
-```shell
-. ~/flowmill/build-env/benv-alias.sh
-```
-
-Use this `benv` alias to fire up the build environment container. Inside the
-container, run the `./build.sh` script to build everything.
-
 ## Adding a new dependency
 
 Use `add_dependency.sh` and follow instructions.
