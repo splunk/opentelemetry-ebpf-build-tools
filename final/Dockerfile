@@ -127,6 +127,11 @@ RUN ln -s $HOME/src/dev/benv-build.sh build.sh
 RUN mkdir -p /etc/flowmill/
 RUN ln -s $HOME/src/misc/keys/staging/authz-token-public.pem  /etc/flowmill/authz-token-public.pem
 
+# Licensing information
+#
+COPY LICENSE.txt $HOME/
+COPY NOTICE.txt $HOME/
+
 ARG BENV_UNMINIMIZE=false
 RUN (which unminimize && $BENV_UNMINIMIZE && (yes | unminimize)) || true
 
