@@ -25,6 +25,8 @@ Third party software
 -------------------------------------------------------------------------------
 args
 
+https://github.com/Taywee/args
+
 Copyright (c) 2016-2017 Taylor C. Richberger <taywee@gmx.com> and Pavel Belikov
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -36,6 +38,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 -------------------------------------------------------------------------------
 spdlog
+
+https://github.com/gabime/spdlog
 
 Copyright (c) 2016 Gabi Melman.                                       
 
@@ -61,6 +65,8 @@ THE SOFTWARE.
 -------------------------------------------------------------------------------
 ares
 
+https://github.com/c-ares/c-ares
+
 /* Copyright 1998 by the Massachusetts Institute of Technology.
  * Copyright (C) 2007-2013 by Daniel Stenberg
  *
@@ -80,6 +86,8 @@ ares
 
 -------------------------------------------------------------------------------
 bcc
+
+https://github.com/iovisor/bcc
 
                                  Apache License
                            Version 2.0, January 2004
@@ -287,6 +295,8 @@ bcc
 -------------------------------------------------------------------------------
 abseil
 
+https://github.com/abseil/abseil-cpp
+
                                  Apache License
                            Version 2.0, January 2004
                         https://www.apache.org/licenses/
@@ -493,6 +503,8 @@ abseil
 -------------------------------------------------------------------------------
 llvm
 
+https://github.com/llvm/llvm-project
+
 University of Illinois/NCSA
 Open Source License
 
@@ -563,6 +575,8 @@ md5 contributions   llvm/lib/Support/MD5.cpp llvm/include/llvm/Support/MD5.h
 -------------------------------------------------------------------------------
 json
 
+https://github.com/nlohmann/json
+
 Copyright (c) 2013-2018 Niels Lohmann
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -587,11 +601,15 @@ SOFTWARE.
 -------------------------------------------------------------------------------
 lookup3
 
+http://www.burtleburtle.net/bob/c/lookup3.c
+
 lookup3.c, by Bob Jenkins, May 2006, Public Domain.
 
 
 -------------------------------------------------------------------------------
 libuv
+
+https://github.com/libuv/libuv
 
 libuv is licensed for use as follows:
 
@@ -667,6 +685,8 @@ The externally maintained libraries used by libuv are:
 
 -------------------------------------------------------------------------------
 openssl
+
+https://github.com/openssl/openssl
 
 /* ====================================================================
  * Copyright (c) 1998-2019 The OpenSSL Project.  All rights reserved.
@@ -786,6 +806,8 @@ openssl
 -------------------------------------------------------------------------------
 grpc
 
+https://github.com/grpc/grpc
+
 Copyright 2014 gRPC authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -803,6 +825,8 @@ limitations under the License.
 
 -------------------------------------------------------------------------------
 curl
+
+https://github.com/curl/curl
 
 COPYRIGHT AND PERMISSION NOTICE
 
@@ -831,6 +855,8 @@ in this Software without prior written authorization of the copyright holder.
 -------------------------------------------------------------------------------
 curlpp
 
+https://github.com/jpbarrette/curlpp
+
 Copyright (c) <2002-2004> <Jean-Philippe Barrette-LaPierre>
 
 Permission is hereby granted, free of charge, to any person obtaining
@@ -855,6 +881,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 -------------------------------------------------------------------------------
 aws-sdk-cpp
+
+https://github.com/aws/aws-sdk-cpp
 
                                  Apache License
                            Version 2.0, January 2004
@@ -1061,6 +1089,8 @@ aws-sdk-cpp
 
 -------------------------------------------------------------------------------
 google-cloud-cpp
+
+https://github.com/googleapis/google-cloud-cpp
 
                                  Apache License
                            Version 2.0, January 2004
