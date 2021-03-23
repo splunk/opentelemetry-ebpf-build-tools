@@ -61,3 +61,6 @@
 [submodule "gcp_cpp/googleapis"]
 	path = gcp_cpp/googleapis
 	url = https://github.com/googleapis/googleapis.git
+[submodule "bcc/bcc"]
+	path = bcc/bcc
+	url = https://github.com/flowmill/bcc.git
