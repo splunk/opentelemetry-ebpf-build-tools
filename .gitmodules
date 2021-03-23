@@ -16,9 +16,6 @@
 [submodule "cpp_misc/libcpp_jwt"]
 	path = cpp_misc/libcpp_jwt
 	url = https://github.com/arun11299/cpp-jwt
-[submodule "bcc/bcc"]
-	path = bcc/bcc
-	url = git@github.com:Flowmill/bcc.git
 [submodule "llvm/llvm-project"]
 	path = llvm/llvm-project
 	url = https://github.com/llvm/llvm-project.git
