@@ -46,7 +46,7 @@ ARG PKG_KERNEL_TOOLS="kmod selinux-utils"
 RUN apt-get -y update && apt-get install --no-install-recommends -y $PKG_KERNEL_TOOLS
 
 # core tools packages
-ARG PKG_CORE_TOOLS=""
+ARG PKG_CORE_TOOLS="pass"
 RUN apt-get -y update && apt-get install --no-install-recommends -y $PKG_CORE_TOOLS
 
 # dev tools packages
