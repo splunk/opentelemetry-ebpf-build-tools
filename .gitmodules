@@ -63,4 +63,4 @@
 	url = https://github.com/googleapis/googleapis.git
 [submodule "bcc/bcc"]
 	path = bcc/bcc
-	url = https://github.com/flowmill/bcc.git
+	url = git@github.com:Flowmill/bcc.git
