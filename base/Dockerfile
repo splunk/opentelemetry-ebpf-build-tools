@@ -57,7 +57,7 @@ ARG PKG_DEV="gdb cgdb tmux strace"
 RUN apt-get -y install --no-install-recommends $PKG_DEV
 
 # dev libraries
-ARG PKG_LIBS="libc-ares-dev libelf-dev libssl-dev"
+ARG PKG_LIBS="libc-ares-dev libelf-dev libssl-dev libzstd-dev"
 RUN apt-get -y install --no-install-recommends $PKG_LIBS
 
 ARG PKG_PY_TEST="python3-pytest python3-dev python3-pip python3-setuptools python3-wheel pylint3"
