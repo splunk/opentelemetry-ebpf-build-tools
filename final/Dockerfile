@@ -69,7 +69,7 @@ ARG PKG_PYTHON_LIBS="ijson docker"
 RUN pip3 install $PKG_PYTHON_LIBS
 
 # setup apt repositories for openjdk
-ARG BENV_JAVA_VERSION=8
+ARG BENV_JAVA_VERSION=11
 RUN echo 'deb http://deb.debian.org/debian/ stretch main non-free contrib' \
   > /etc/apt/sources.list.d/debian-stretch.list
 RUN echo 'deb http://deb.debian.org/debian-security/ stretch/updates main non-free contrib' \
@@ -87,7 +87,7 @@ ARG PKG_EXTRA_PACKAGES="openjdk-${BENV_JAVA_VERSION}-jdk-headless google-cloud-s
 RUN apt-get -y update && apt-get install -y --no-install-recommends $PKG_EXTRA_PACKAGES
 
 ## java version required by render framework parser
-RUN update-alternatives --set java /usr/lib/jvm/java-${BENV_JAVA_VERSION}-openjdk-amd64/jre/bin/java
+RUN update-alternatives --set java /usr/lib/jvm/java-${BENV_JAVA_VERSION}-openjdk-amd64/bin/java
 RUN update-alternatives --set javac /usr/lib/jvm/java-${BENV_JAVA_VERSION}-openjdk-amd64/bin/javac
 
 # swagger-codegen-cli, used to build the API docs
