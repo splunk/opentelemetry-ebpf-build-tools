@@ -7,6 +7,7 @@
 # - nlohmann_json
 # - spdlog
 # - ccan
+# - googletest
 
 ARG base_IMAGE_TAG
 FROM $base_IMAGE_TAG
@@ -81,3 +82,18 @@ RUN cmake --build . --target install -j $NPROC --config $CMAKE_BUILD_TYPE
 WORKDIR $HOME
 COPY ccan ccan
 RUN tar -cf- ccan/**/*.h | tar -xvf- -C $HOME/install/include
+
+# googletest
+WORKDIR $HOME
+COPY googletest googletest
+WORKDIR $HOME/googletest
+RUN cmake \
+  "-DCMAKE_INSTALL_PREFIX=$HOME/install" \
+  -DCMAKE_BUILD_TYPE=$CMAKE_BUILD_TYPE \
+  -DBUILD_GMOCK=ON \
+  -DINSTALL_GTEST=OFF \
+  .
+RUN cmake --build . -j $NPROC --config $CMAKE_BUILD_TYPE
+RUN cp lib/*.a $HOME/install/lib
+RUN cp -R googletest/include/gtest $HOME/install/include
+RUN cp -R googlemock/include/gmock $HOME/install/include
