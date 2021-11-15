@@ -64,3 +64,6 @@
 [submodule "bcc/bcc"]
 	path = bcc/bcc
 	url = https://github.com/Flowmill/bcc.git
+[submodule "googletest"]
+	path = cpp_misc/googletest
+	url = https://github.com/google/googletest.git
