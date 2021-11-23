@@ -90,6 +90,9 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends $PKG_EXTRA_P
 RUN update-alternatives --set java /usr/lib/jvm/java-${BENV_JAVA_VERSION}-openjdk-amd64/bin/java
 RUN update-alternatives --set javac /usr/lib/jvm/java-${BENV_JAVA_VERSION}-openjdk-amd64/bin/javac
 
+# gradle
+RUN wget https://services.gradle.org/distributions/gradle-6.0.1-bin.zip -O /usr/local/lib/gradle.zip
+
 # swagger-codegen-cli, used to build the API docs
 RUN wget \
   https://repo1.maven.org/maven2/io/swagger/swagger-codegen-cli/2.4.12/swagger-codegen-cli-2.4.12.jar \
