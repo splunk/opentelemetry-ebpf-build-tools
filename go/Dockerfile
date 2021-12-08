@@ -15,3 +15,6 @@ RUN mkdir -p $HOME/go/src/github.com/grpc-ecosystem && \
   cd grpc-gateway && git checkout v1 && \
   /usr/local/go/bin/go install github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway && \
   /usr/local/go/bin/go install github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
+
+# staticheck linter
+RUN /usr/local/go/bin/go get -u honnef.co/go/tools/cmd/staticcheck
