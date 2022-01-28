@@ -50,6 +50,14 @@ else
 fi
 
 cmake $EXTRA_CMAKE_OPTIONS "$@" $CMAKE_SOURCE_DIR
+
+if [[ "$1" == "--cmake-only" ]]; then
+  echo "=============================================="
+  echo "cmake completed - skipping make and docker tag"
+  echo "=============================================="
+  exit 0
+fi
+
 make -j "${nproc}"
 if [[ -n "${BENV_BASE_IMAGE_DISTRO}" ]] && [[ -n "${BENV_BASE_IMAGE_VERSION}" ]]; then
   echo docker tag ${DOCKER_TAG_PREFIX}build-env:latest "${DOCKER_TAG_PREFIX}build-env:${BENV_BASE_IMAGE_DISTRO}-${BENV_BASE_IMAGE_VERSION}"
