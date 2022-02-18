@@ -13,9 +13,6 @@
 [submodule "cpp_misc/yaml-cpp"]
 	path = cpp_misc/yaml-cpp
 	url = https://github.com/jbeder/yaml-cpp.git
-[submodule "cpp_misc/libcpp_jwt"]
-	path = cpp_misc/libcpp_jwt
-	url = https://github.com/arun11299/cpp-jwt
 [submodule "llvm/llvm-project"]
 	path = llvm/llvm-project
 	url = https://github.com/llvm/llvm-project.git
