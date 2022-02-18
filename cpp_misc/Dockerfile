@@ -2,7 +2,6 @@
 # - LZ4
 # - yaml-cpp
 # - breakpad
-# - jwt
 # - args
 # - nlohmann_json
 # - spdlog
@@ -45,8 +44,6 @@ RUN CFLAGS=`echo ${BUILD_CFLAGS} | sed 's/\\\\ / /g'`; nice make -j$NPROC && nic
 # remove gtest and gmock includes installed by breakpad
 RUN rm -r $HOME/install/include/gtest
 RUN rm -r $HOME/install/include/gmock
-
-COPY libcpp_jwt/include/jwt "$HOME/install/include/jwt"
 
 # args
 WORKDIR $HOME
