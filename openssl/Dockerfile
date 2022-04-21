@@ -17,7 +17,7 @@ RUN ./Configure linux-x86_64 \
 	--openssldir=$HOME/install/openssl \
 	${CONFIGURE_RELEASE_DEBUG} \
 	no-comp no-capieng no-cms no-dgram no-dso no-dynamic-engine \
-	enable-ec_nistp_64_gcc_128 no-gost no-nextprotoneg no-ocsp no-psk \
+	enable-ec_nistp_64_gcc_128 no-gost no-ocsp no-psk \
 	no-shared no-srp no-srtp no-threads no-ts \
 	no-ssl no-ssl3 no-tls1 no-tls1_1 no-dtls \
 	no-bf no-blake2 no-camellia no-cast no-chacha no-des no-idea no-md4 \
