@@ -15,28 +15,6 @@ ARG CURL_LIBRARY
 
 COPY --from=benv-openssl $HOME/install/openssl $HOME/openssl
 
-##########
-# c-ares #
-##########
-
-WORKDIR $HOME
-COPY c-ares c-ares
-WORKDIR $HOME/build/c-ares
-
-# note: HAVE_FILE_OFFSET_BITS is unset to avoid GLIBC_2.28 dependency on fcntl64
-# in curlx_nonblock()
-RUN nice cmake \
-  -DCMAKE_INSTALL_PREFIX:PATH=$HOME/install \
-	-DCARES_BUILD_TOOLS=OFF \
-	-DCARES_BUILD_TESTS=OFF \
-	-DCARES_SHARED=OFF \
-	-DCARES_STATIC=ON \
-	-DCARES_STATIC_PIC=ON \
-	-DCMAKE_C_FLAGS="-fPIC" \
-	-DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE} \
-	$HOME/c-ares
-RUN nice make -j$NPROC && nice make -j$NPROC install
-
 ########
 # curl #
 ########

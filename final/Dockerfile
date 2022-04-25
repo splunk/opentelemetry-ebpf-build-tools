@@ -112,13 +112,13 @@ COPY --from=build-librdkafka $HOME/install $HOME/install
 COPY --from=build-abseil-cpp $HOME/install $HOME/install
 COPY --from=build-libmaxminddb $HOME/install $HOME/install
 COPY --from=build-demangle $HOME/install /usr/local
+COPY --from=build-grpc-cpp $HOME/install $HOME/install
 COPY --from=build-gcp_cpp $HOME/install $HOME/install
 #gen:dep-copy
 
 COPY --from=build-go $HOME/go/bin /usr/local/go/bin
 COPY --from=build-go $HOME/go/src /usr/local/go/src
 COPY --from=build-go $HOME/go/pkg /usr/local/go/pkg
-COPY --from=build-grpc-cpp $HOME/install /usr/local/
 
 # Preprocessor for BPF used by cmake
 RUN pip3 install pcpp
