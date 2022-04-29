@@ -64,3 +64,6 @@
 [submodule "googletest"]
 	path = cpp_misc/googletest
 	url = https://github.com/google/googletest.git
+[submodule "opentelemetry/opentelemetry-proto"]
+	path = opentelemetry/opentelemetry-proto
+	url = https://github.com/open-telemetry/opentelemetry-proto.git

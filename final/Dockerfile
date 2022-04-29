@@ -15,6 +15,7 @@ ARG abseil_cpp_IMAGE_TAG
 ARG libmaxminddb_IMAGE_TAG
 ARG demangle_IMAGE_TAG
 ARG gcp_cpp_IMAGE_TAG
+ARG opentelemetry_IMAGE_TAG
 #gen:dep-arg
 
 FROM $base_IMAGE_TAG as build-main
@@ -32,6 +33,7 @@ FROM $abseil_cpp_IMAGE_TAG as build-abseil-cpp
 FROM $libmaxminddb_IMAGE_TAG as build-libmaxminddb
 FROM $demangle_IMAGE_TAG as build-demangle
 FROM $gcp_cpp_IMAGE_TAG as build-gcp_cpp
+FROM $opentelemetry_IMAGE_TAG as build-opentelemetry
 #gen:dep-from
 
 # Bring everything together
@@ -114,6 +116,7 @@ COPY --from=build-libmaxminddb $HOME/install $HOME/install
 COPY --from=build-demangle $HOME/install /usr/local
 COPY --from=build-grpc-cpp $HOME/install $HOME/install
 COPY --from=build-gcp_cpp $HOME/install $HOME/install
+COPY --from=build-opentelemetry $HOME/install $HOME/install
 #gen:dep-copy
 
 COPY --from=build-go $HOME/go/bin /usr/local/go/bin

@@ -125,6 +125,7 @@ build_directory(librdkafka DEPENDS base)
 build_directory(abseil_cpp DEPENDS base)
 build_directory(libmaxminddb DEPENDS base)
 build_directory(demangle DEPENDS base)
+build_directory(opentelemetry DEPENDS base grpc_cpp)
 #gen:dep-dir
 
 build_directory(
@@ -145,6 +146,7 @@ build_directory(
     libmaxminddb
     demangle
     gcp_cpp
+    opentelemetry
 )
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
