@@ -17,11 +17,11 @@ RUN ./Configure linux-x86_64 \
 	--openssldir=$HOME/install/openssl \
 	${CONFIGURE_RELEASE_DEBUG} \
 	no-comp no-capieng no-cms no-dgram no-dso no-dynamic-engine \
-	enable-ec_nistp_64_gcc_128 no-gost no-ocsp no-psk \
+	enable-ec_nistp_64_gcc_128 no-gost no-psk \
 	no-shared no-srp no-srtp no-threads no-ts \
 	no-ssl no-ssl3 no-tls1 no-tls1_1 no-dtls \
-	no-bf no-blake2 no-camellia no-cast no-chacha no-des no-idea no-md4 \
-	no-mdc2 no-ocb no-poly1305 no-rc2 no-rc4 no-rmd160 no-scrypt no-whirlpool
+	no-bf no-blake2 no-camellia no-cast no-idea no-md4 \
+	no-mdc2 no-ocb no-rc2 no-rmd160 no-scrypt no-whirlpool
 # would also want 	--api=1.1.0  but AWS CLI is built on 1.0.2 API
 # no-ui, no-sock conflict with curl
 RUN nice make -j$NPROC

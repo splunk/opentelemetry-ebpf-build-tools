@@ -107,6 +107,7 @@ ENV PATH="$HOME/install/bin:/usr/local/go/bin:${PATH}"
 COPY --from=build-llvm $HOME/install $HOME/install
 COPY --from=build-bcc $HOME/install $HOME/install
 COPY --from=build-libuv $HOME/install $HOME/install
+COPY --from=build-curl $HOME/install $HOME/install
 COPY --from=build-aws-sdk $HOME/install $HOME/install
 COPY --from=build-cpp-misc $HOME/install $HOME/install
 COPY --from=build-openssl $HOME/install $HOME/install
