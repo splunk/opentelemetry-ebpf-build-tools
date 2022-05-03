@@ -19,9 +19,6 @@
 [submodule "openssl/openssl"]
 	path = openssl/openssl
 	url = https://github.com/openssl/openssl.git
-[submodule "curl/c-ares"]
-	path = curl/c-ares
-	url = https://github.com/c-ares/c-ares.git
 [submodule "curl/curl"]
 	path = curl/curl
 	url = https://github.com/curl/curl.git
