@@ -1,0 +1,5 @@
+#!/bin/bash
+
+docker_args+=(
+  --mount "type=bind,source=$HOME/cov-analysis-linux64-2022.6.1,destination=/root/cov-analysis-linux64-2022.6.1,readonly"
+)
