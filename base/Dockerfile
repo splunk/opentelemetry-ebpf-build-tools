@@ -1,5 +1,5 @@
 ARG BENV_BASE_IMAGE_DISTRO=debian
-ARG BENV_BASE_IMAGE_VERSION=buster
+ARG BENV_BASE_IMAGE_VERSION=bullseye
 FROM ${BENV_BASE_IMAGE_DISTRO}:${BENV_BASE_IMAGE_VERSION} AS build-main
 
 ################ DEPENDENCIES ################
@@ -34,7 +34,7 @@ ARG PKG_TEXT="xxd sed ripgrep less jq"
 RUN apt-get -y install --no-install-recommends $PKG_TEXT
 
 # compilers
-ARG PKG_MAKE="g++ clang"
+ARG PKG_MAKE="g++"
 RUN apt-get -y install --no-install-recommends $PKG_MAKE
 
 # build tools
@@ -67,6 +67,10 @@ RUN apt-get -y install --no-install-recommends $PKG_PY_TEST
 ARG PKG_JAVA="default-jdk-headless"
 RUN apt-get -y install --no-install-recommends $PKG_JAVA
 
+# LLVM
+ARG PKG_LLVM="llvm-11-dev libclang-11-dev clang-11"
+RUN apt-get -y install --no-install-recommends $PKG_LLVM
+
 ## packages that will install recommended dependencies
 
 # make tools
@@ -77,7 +81,7 @@ RUN apt-get -y install $PKG_MAKE
 ARG PKG_BCC="bison flex"
 RUN apt-get -y install $PKG_BCC
 
-# Recent version of Go (for oauth2_proxy)
+# Recent version of Go
 WORKDIR /usr/local
 RUN curl "https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz" | tar xvz --
 # recommended: add PATH=$PATH:/usr/local/go/bin to ~/.bashrc

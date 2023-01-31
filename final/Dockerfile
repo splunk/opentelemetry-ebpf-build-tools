@@ -2,7 +2,6 @@
 ARG base_IMAGE_TAG
 ARG openssl_IMAGE_TAG
 ARG curl_IMAGE_TAG
-ARG llvm_IMAGE_TAG
 ARG bcc_IMAGE_TAG
 ARG libuv_IMAGE_TAG
 ARG aws_sdk_IMAGE_TAG
@@ -18,7 +17,6 @@ ARG opentelemetry_IMAGE_TAG
 FROM $base_IMAGE_TAG as build-main
 FROM $openssl_IMAGE_TAG as build-openssl
 FROM $curl_IMAGE_TAG as build-curl
-FROM $llvm_IMAGE_TAG as build-llvm
 FROM $bcc_IMAGE_TAG as build-bcc
 FROM $libuv_IMAGE_TAG as build-libuv
 FROM $aws_sdk_IMAGE_TAG as build-aws-sdk
@@ -49,14 +47,6 @@ RUN apt-get -y update && apt-get install --no-install-recommends -y $PKG_CORE_TO
 # dev tools packages
 ARG PKG_DEV_TOOLS="vim-nox lsof"
 RUN apt-get -y update && apt-get install --no-install-recommends -y $PKG_DEV_TOOLS
-
-# development data packages
-ARG PKG_DEV_DATA="geoip-database-extra"
-RUN apt-get -y update && apt-get install --no-install-recommends -y $PKG_DEV_DATA
-
-# python tools packages
-ARG PKG_PYTHON_TOOLS=""
-RUN apt-get -y update && apt-get install --no-install-recommends -y $PKG_PYTHON_TOOLS
 
 # aws tools packages
 ARG PKG_AWS_TOOLS="awscli"
@@ -98,8 +88,7 @@ RUN wget \
 # setup path
 ENV PATH="$HOME/install/bin:/usr/local/go/bin:${PATH}"
 
-# aws-sdk will include curl
-COPY --from=build-llvm $HOME/install $HOME/install
+# copy artifacts from individual builds
 COPY --from=build-bcc $HOME/install $HOME/install
 COPY --from=build-libuv $HOME/install $HOME/install
 COPY --from=build-curl $HOME/install $HOME/install
@@ -124,8 +113,6 @@ RUN pip3 install pcpp
 # to be run after we build the image.
 WORKDIR $HOME
 RUN ln -s $HOME/src/dev/benv-build.sh build.sh
-RUN mkdir -p /etc/flowmill/
-RUN ln -s $HOME/src/misc/keys/staging/authz-token-public.pem  /etc/flowmill/authz-token-public.pem
 
 # Licensing information
 #
