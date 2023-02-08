@@ -1,4 +1,3 @@
-# librdkafka
 
 ARG base_IMAGE_TAG
 ARG openssl_IMAGE_TAG
@@ -10,10 +9,8 @@ ARG aws_sdk_IMAGE_TAG
 ARG cpp_misc_IMAGE_TAG
 ARG go_IMAGE_TAG
 ARG grpc_cpp_IMAGE_TAG
-ARG librdkafka_IMAGE_TAG
 ARG abseil_cpp_IMAGE_TAG
 ARG libmaxminddb_IMAGE_TAG
-ARG demangle_IMAGE_TAG
 ARG gcp_cpp_IMAGE_TAG
 ARG opentelemetry_IMAGE_TAG
 #gen:dep-arg
@@ -28,10 +25,8 @@ FROM $aws_sdk_IMAGE_TAG as build-aws-sdk
 FROM $cpp_misc_IMAGE_TAG as build-cpp-misc
 FROM $go_IMAGE_TAG as build-go
 FROM $grpc_cpp_IMAGE_TAG as build-grpc-cpp
-FROM $librdkafka_IMAGE_TAG as build-librdkafka
 FROM $abseil_cpp_IMAGE_TAG as build-abseil-cpp
 FROM $libmaxminddb_IMAGE_TAG as build-libmaxminddb
-FROM $demangle_IMAGE_TAG as build-demangle
 FROM $gcp_cpp_IMAGE_TAG as build-gcp_cpp
 FROM $opentelemetry_IMAGE_TAG as build-opentelemetry
 #gen:dep-from
@@ -111,10 +106,8 @@ COPY --from=build-curl $HOME/install $HOME/install
 COPY --from=build-aws-sdk $HOME/install $HOME/install
 COPY --from=build-cpp-misc $HOME/install $HOME/install
 COPY --from=build-openssl $HOME/install $HOME/install
-COPY --from=build-librdkafka $HOME/install $HOME/install
 COPY --from=build-abseil-cpp $HOME/install $HOME/install
 COPY --from=build-libmaxminddb $HOME/install $HOME/install
-COPY --from=build-demangle $HOME/install /usr/local
 COPY --from=build-grpc-cpp $HOME/install $HOME/install
 COPY --from=build-gcp_cpp $HOME/install $HOME/install
 COPY --from=build-opentelemetry $HOME/install $HOME/install
