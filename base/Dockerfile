@@ -9,7 +9,7 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
 ENV BENV_BASE_IMAGE_DISTRO=${BENV_BASE_IMAGE_DISTRO}
 ENV BENV_BASE_IMAGE_VERSION=${BENV_BASE_IMAGE_VERSION}
 
-ARG GO_VERSION="1.17.6"
+ARG GO_VERSION="1.20"
 
 # setup apt (add non-free, contrib and backports)
 RUN [ "$BENV_BASE_IMAGE_DISTRO" != 'debian' ] || [ "$BENV_BASE_IMAGE_VERSION" != 'sid' ] \
