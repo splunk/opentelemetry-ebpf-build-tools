@@ -58,7 +58,8 @@ if [[ "$1" == "--cmake-only" ]]; then
   exit 0
 fi
 
-make -j "${nproc}"
+make
+
 if [[ -n "${BENV_BASE_IMAGE_DISTRO}" ]] && [[ -n "${BENV_BASE_IMAGE_VERSION}" ]]; then
   echo docker tag ${DOCKER_TAG_PREFIX}build-env:latest "${DOCKER_TAG_PREFIX}build-env:${BENV_BASE_IMAGE_DISTRO}-${BENV_BASE_IMAGE_VERSION}"
   docker tag ${DOCKER_TAG_PREFIX}build-env:latest "${DOCKER_TAG_PREFIX}build-env:${BENV_BASE_IMAGE_DISTRO}-${BENV_BASE_IMAGE_VERSION}"
