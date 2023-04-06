@@ -6,6 +6,8 @@ FROM $base_IMAGE_TAG
 ARG CMAKE_BUILD_TYPE
 ARG RESTRICTED_NPROC=1
 
+RUN apt-get install --no-install-recommends -y zip
+
 WORKDIR $HOME
 COPY bcc bcc
 WORKDIR $HOME/build/bcc
