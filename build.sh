@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
-# Builds the build environment, which is a Docker image you can
-# then use to build the projects in the flowmill repo.
+# Builds the build environment -- a container image which is then used
+# to build the project in the main repo.
 
 # Call with `VERBOSE=1` for verbose output
 # e.g.: `./build.sh VERBOSE=1`

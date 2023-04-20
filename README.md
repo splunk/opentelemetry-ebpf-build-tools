@@ -1,7 +1,12 @@
-# Flowmill build container
+# OpenTelemetry-eBPF Build Tools
 
-This repository builds the Docker image which is in turn used to build binaries and docker
-images from the code in the main repository.
+This repository contains third-party tools and libraries needed to build
+projects in the [opentelemetry-ebpf](https://github.com/open-telemetry/opentelemetry-ebpf)
+repository.
+
+Building this repository results in a _build environment_ container image that
+is then used for building artifacts of the main project (see the
+[Developer Guilde](https://github.com/open-telemetry/opentelemetry-ebpf/blob/main/docs/developing.md)).
 
 ## MacOS prerequisites:
 
@@ -10,7 +15,7 @@ images from the code in the main repository.
 * cmake: `brew install cmake`
 * make: installed along with developer tools; if Homebrew is working you should have make
 
-## Building the build environment:
+## Building
 
 * Check out this repository
 * Run the build script: `./build.sh`
