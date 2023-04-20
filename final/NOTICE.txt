@@ -1,7 +1,7 @@
-Flowmill Build Container
-========================
+OpenTelemetry-eBPF Build Tools
+==============================
 
-https://github.com/Flowmill/flowmill-build-env
+https://github.com/Flowmill/opentelemetry-ebpf-build-tools
 
 Copyright 2021 Splunk Inc.
 

@@ -1,6 +1,6 @@
 cmake_minimum_required (VERSION 3.5)
 
-project (build-env VERSION 0.0.1)
+project (opentelemetry-ebpf-build-tools VERSION 0.1.0)
 
 # Architecture:
 #
