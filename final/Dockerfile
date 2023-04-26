@@ -52,7 +52,7 @@ RUN apt-get -y update && apt-get install --no-install-recommends -y $PKG_DEV_TOO
 ARG PKG_AWS_TOOLS="awscli"
 RUN apt-get -y update && apt-get install --no-install-recommends -y $PKG_AWS_TOOLS
 
-ARG PKG_PYTHON_LIBS="ijson docker"
+ARG PKG_PYTHON_LIBS="ijson docker gcovr"
 RUN pip3 install $PKG_PYTHON_LIBS
 
 # setup apt repositories for openjdk
